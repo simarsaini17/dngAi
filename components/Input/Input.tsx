@@ -39,7 +39,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             "focus-within:border-blue-700 focus-within:ring-1 focus-within:ring-blue-700 focus-within:ring-opacity-20",
             "transition-all duration-200 ease-in-out",
             "focus-within:hover:border-blue-700",
-            error ? "border-red-500" : "border-gray-300"
+            error &&
+              "hover:border-red-600 focus-within:border-red-600 focus-within:ring-1 focus-within:ring-red-600 focus-within:ring-opacity-20 focus-within:hover:border-red-600"
           )}
         >
           {icon && <MagnifyingGlassIcon className="text-gray-500" />}
