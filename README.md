@@ -1,6 +1,6 @@
 ## Draft & Goal
 
-CHeckout the use account creation and workflow screen
+Checkout the use account creation and workflow screen
 
 ## Getting Started
 
@@ -18,6 +18,12 @@ To run the project:
 
 ```bash
 RUN yarn
+```
+
+or
+
+```bash
+npm i
 ```
 
 2. Start the development server:
