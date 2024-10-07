@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "../Button/Button";
 import { Badge } from "../ui/badge";
 import {
@@ -23,8 +24,22 @@ const CustomCard: React.FC<CardProps> = ({
   tags,
   buttonLabel,
 }: CardProps) => {
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleCardClick = () => {
+    setIsFocused((prev) => !prev); // Toggle focus state
+  };
   return (
-    <div className="border border-gray-400 flex flex-col justify-center rounded-lg hover:border-gray-400 focus-within:ring-2 focus-within:ring-blue-700 transition-all duration-200 ease-in-out">
+    <div
+      className={`border flex flex-col justify-center rounded-lg transition-all duration-200 ease-in-out ${
+        isFocused
+          ? "border-blue-700 ring-1 ring-blue-700 ring-opacity-20"
+          : "hover:border-gray-400"
+      }`}
+      onClick={handleCardClick}
+      onBlur={() => setIsFocused(false)}
+      onMouseLeave={() => setIsFocused(false)}
+    >
       <CardHeader>
         <div className="flex justify-between items-center">
           <CardTitle className="font-semibold">{title}</CardTitle>
