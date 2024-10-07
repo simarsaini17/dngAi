@@ -27,6 +27,7 @@ const config: Config = {
   moduleNameMapper: {
     // ...
     "^@/components/(.*)$": "<rootDir>/components/$1",
+    "^@/hooks/(.*)$": "<rootDir>/hooks/$1",
   },
 
   // A list of paths to directories that Jest should use to search for files in

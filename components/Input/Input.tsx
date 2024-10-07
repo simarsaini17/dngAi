@@ -12,6 +12,7 @@ export interface InputProps
   helperText?: string;
   placholderText?: string;
   icon?: React.ReactElement;
+  className?: string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -31,7 +32,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ) => {
     return (
       <div>
-        <label className="block mb-1 text-sm font-medium text-gray-700">
+        <label
+          className="block mb-1 text-sm font-medium text-gray-700"
+          aria-label={label}
+        >
           {label}
         </label>
         <div
@@ -51,7 +55,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             placeholder={placholderText}
             {...rest}
-            className="focus-visible:outline-none"
+            className={cn("focus-visible:outline-none w-full", className)}
           />
         </div>
         {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
